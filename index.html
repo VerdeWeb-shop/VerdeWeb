@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verde - Productos Naturales</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+
+        .productos {
+            margin: 20px;
+        }
+
+        .producto {
+            display: inline-block;
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .producto img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-contenido {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: 15% auto;
+            border-radius: 10px;
+        }
+
+        .cerrar {
+            float: right;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Verde - Productos Naturales</h1>
+        <p>Bienestar natural para ti</p>
+    </header>
+
+    <section class="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="producto">
+            <img src="producto1.jpg" alt="Producto 1">
+            <h3>Producto Natural</h3>
+            <p>Descripción breve del producto.</p>
+            <button onclick="mostrarFormulario()">Comprar</button>
+        </div>
+    </section>
+
+    <div id="formulario-compra" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarFormulario()">&times;</span>
+            <h2>Formulario de Compra</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="producto">Producto:</label>
+                <select id="producto" name="producto">
+                    <option value="producto1">Producto 1</option>
+                </select>
+
+                <button type="submit">Enviar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function mostrarFormulario() {
+            document.getElementById("formulario-compra").style.display = "block";
+        }
+        function cerrarFormulario() {
+            document.getElementById("formulario-compra").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
