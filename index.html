@@ -141,24 +141,9 @@
                 producto: formData.get('producto')
             };
 
-            fetch('https://script.google.com/macros/s/AKfycbzIN0gv2Dbyh0_baS64okzd5wYgZSPgg56wLRDIwh5X-tYOr42V1MLjxWMILdUGPfZz/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbzIN0gv2Dbyh0_baS64okzd5wYgZSPgg56wLRDIwh5X-tYOr42V1MLjxWMILdUGPfZz/exec', {  // Reemplaza con tu URL de Web App
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(response => response.text())
-                .then(result => {
-                    alert("Pedido enviado con éxito");
-                    cerrarFormulario(); // Cierra el formulario al enviar
-                })
-                .catch(error => {
-                    alert("Hubo un error al enviar el pedido");
-                    console.error("Error:", error);
-                });
-        });
-    </script>
-</body>
-
-</html>
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'  // Agregado para 
